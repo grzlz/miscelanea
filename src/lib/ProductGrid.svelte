@@ -62,29 +62,45 @@
 				<p class="text-gray-500 text-xl">No se encontraron productos</p>
 			</div>
 		{:else}
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-				{#each displayProducts as product}
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+				{#each displayProducts as product, i}
 					<div 
-						class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer border border-gray-200"
+						class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-100 overflow-hidden transform hover:-translate-y-2 hover:rotate-1"
 						on:click={() => onProductClick(product)}
 						on:keypress={(e) => e.key === 'Enter' && onProductClick(product)}
 						tabindex="0"
 						role="button"
+						style="animation-delay: {i * 100}ms"
 					>
-						<div class="aspect-[3/4] bg-gray-100 rounded-t-lg overflow-hidden">
+						<div class="relative aspect-[3/4] bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
 							<img 
 								src={product.image} 
 								alt={product.name}
-								class="w-full h-full object-cover"
+								class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
 							>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+							<div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+								<div class="bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg">
+									<svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+									</svg>
+								</div>
+							</div>
 						</div>
-						<div class="p-4">
-							<h3 class="font-semibold text-lg text-gray-900 mb-1">{product.name}</h3>
-							<p class="text-gray-600 text-sm mb-2">{product.description}</p>
-							<p class="text-2xl font-bold text-amber-600">{product.price}</p>
-							<span class="inline-block mt-2 px-2 py-1 bg-amber-100 text-amber-800 text-xs rounded-full">
-								{product.category}
-							</span>
+						<div class="p-6">
+							<div class="flex justify-between items-start mb-2">
+								<h3 class="font-bold text-lg text-gray-900 group-hover:text-amber-600 transition-colors duration-300">{product.name}</h3>
+							</div>
+							<p class="text-gray-600 text-sm mb-4 line-clamp-2">{product.description}</p>
+							<div class="flex justify-between items-center">
+								<p class="text-2xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">{product.price}</p>
+								<span class="px-3 py-1 bg-gradient-to-r from-amber-100 to-orange-100 text-amber-800 text-xs font-semibold rounded-full border border-amber-200">
+									{product.category}
+								</span>
+							</div>
+							<div class="mt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+								<div class="w-full h-1 bg-gradient-to-r from-amber-600 to-orange-600 rounded-full"></div>
+							</div>
 						</div>
 					</div>
 				{/each}
