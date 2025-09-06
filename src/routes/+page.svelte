@@ -3,6 +3,7 @@
 	import HeroSection from '$lib/HeroSection.svelte';
 	import ProductGrid from '$lib/ProductGrid.svelte';
 	import OrderModal from '$lib/OrderModal.svelte';
+	import Footer from '$lib/Footer.svelte';
 	
 	let products = $state([]);
 	let filteredProducts = $state([]);
@@ -32,10 +33,13 @@
 	}
 </script>
 
-<div class="min-h-screen bg-gray-50">
+<div class="min-h-screen bg-gray-50 flex flex-col">
 	<Navbar />
-	<HeroSection onSearch={handleSearch} />
-	<ProductGrid products={filteredProducts} onProductClick={handleProductClick} />
+	<main class="flex-1">
+		<HeroSection onSearch={handleSearch} />
+		<ProductGrid products={filteredProducts} onProductClick={handleProductClick} />
+	</main>
+	<Footer />
 	<OrderModal 
 		bind:isOpen={showModal} 
 		product={selectedProduct} 
