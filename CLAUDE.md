@@ -30,7 +30,9 @@ Website for La Miscelánea, an alcohol distributor company. The main purpose is 
 - Confirmation flow
 
 ## Technical Stack
-- Simple HTML/CSS/JavaScript (no TypeScript)
+- Svelte 5 (existing project setup)
+- Tailwind 4 for styling
+- No TypeScript (JavaScript only)
 - Responsive design
 - Clean, professional look suitable for B2B alcohol distribution
 
