@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Miscelánea - Haz tu pedido</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">La Miscelánea</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2 class="hero-title">Haz tu pedido</h2>
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Buscar productos...">
+                    <button class="search-btn">Buscar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="products">
+            <div class="container">
+                <div id="productGrid" class="product-grid">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Confirmar Pedido</h3>
+            <div id="modalProductInfo" class="modal-product-info">
+            </div>
+            <div class="modal-actions">
+                <button id="confirmOrder" class="btn-primary">Confirmar Pedido</button>
+                <button id="cancelOrder" class="btn-secondary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
