@@ -29,23 +29,15 @@
 			{pageTitle} estará disponible muy pronto
 		</p>
 
-		<!-- Progress Bar Animation -->
-		<div class="mb-8 animate-fade-in-up delay-400">
-			<div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-				<div class="h-full bg-gradient-to-r from-amber-600 to-orange-600 rounded-full animate-progress"></div>
-			</div>
-			<p class="text-sm text-gray-500 mt-2">Construyendo algo increíble...</p>
-		</div>
+
 
 		<!-- Back Home Button -->
-		<div class="animate-fade-in-up delay-600">
+		<div class="relative top-8 animate-fade-in-up delay-600">
 			<a 
 				href="/" 
 				class="inline-flex items-center gap-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white px-8 py-4 rounded-full font-semibold hover:from-amber-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
 			>
-				<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-				</svg>
+
 				Volver al inicio
 			</a>
 		</div>

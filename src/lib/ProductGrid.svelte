@@ -6,7 +6,7 @@
 			id: 1,
 			name: "Tequila Don Julio 1942",
 			price: "$2,450",
-			image: "https://via.placeholder.com/300x400/amber/white?text=Tequila",
+			image: "/don-julio.jpg",
 			category: "Tequila",
 			description: "Tequila añejo premium"
 		},
@@ -14,7 +14,7 @@
 			id: 2,
 			name: "Whisky Macallan 18",
 			price: "$8,500",
-			image: "https://via.placeholder.com/300x400/amber/white?text=Whisky",
+			image: "/macallan.jpg",
 			category: "Whisky",
 			description: "Whisky escocés single malt"
 		},
@@ -22,7 +22,7 @@
 			id: 3,
 			name: "Ron Zacapa 23",
 			price: "$1,200",
-			image: "https://via.placeholder.com/300x400/amber/white?text=Ron",
+			image: "/zacapa.jpg",
 			category: "Ron",
 			description: "Ron guatemalteco premium"
 		},
@@ -30,7 +30,7 @@
 			id: 4,
 			name: "Vodka Grey Goose",
 			price: "$850",
-			image: "https://via.placeholder.com/300x400/amber/white?text=Vodka",
+			image: "/grey-goose.webp",
 			category: "Vodka",
 			description: "Vodka francés premium"
 		},
@@ -38,15 +38,15 @@
 			id: 5,
 			name: "Cognac Hennessy XO",
 			price: "$3,200",
-			image: "https://via.placeholder.com/300x400/amber/white?text=Cognac",
+			image: "/hennessy.jpg",
 			category: "Cognac",
 			description: "Cognac francés extra old"
 		},
 		{
 			id: 6,
-			name: "Mezcal Del Maguey",
+			name: "Mezcal 400 Conejos",
 			price: "$950",
-			image: "https://via.placeholder.com/300x400/amber/white?text=Mezcal",
+			image: "/conejos.jpg",
 			category: "Mezcal",
 			description: "Mezcal artesanal oaxaqueño"
 		}
@@ -57,6 +57,9 @@
 
 <section class="py-12 px-4">
 	<div class="max-w-7xl mx-auto">
+		<h2 class="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+			Lo más vendido
+		</h2>
 		{#if displayProducts.length === 0}
 			<div class="text-center py-20">
 				<p class="text-gray-500 text-xl">No se encontraron productos</p>
@@ -72,11 +75,11 @@
 						role="button"
 						style="animation-delay: {i * 100}ms"
 					>
-						<div class="relative aspect-[3/4] bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
+						<div class="relative w-full h-80 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
 							<img 
 								src={product.image} 
 								alt={product.name}
-								class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+								class="w-full h-full object-contain transition-all duration-500 group-hover:scale-110"
 							>
 							<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 							<div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">

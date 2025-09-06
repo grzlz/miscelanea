@@ -2,8 +2,8 @@
 	import { page } from '$app/stores';
 	import UnderConstruction from '$lib/UnderConstruction.svelte';
 	
-	$: status = $page.error?.status || 404;
-	$: message = $page.error?.message || 'Página no encontrada';
+	let status = $derived($page.error?.status || 404);
+	let message = $derived($page.error?.message || 'Página no encontrada');
 </script>
 
 <svelte:head>
